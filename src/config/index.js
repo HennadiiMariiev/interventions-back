@@ -6,14 +6,11 @@ const {
   JWT_REFRESH_SECRET,
   NODE_ENV,
   FRONTEND_APP_URL,
-} = require("./config");
-const {
-  SALT_COUNT,
   ACCESS_EXPIRES_IN,
   REFRESH_EXPIRES_IN,
-  MONTHES_ENUM,
-} = require("./constants");
-const { connectDatabase } = require("./db.connect");
+} = require('./config');
+const { SALT_COUNT, MONTHES_ENUM } = require('./constants');
+const { connectDatabase } = require('./db.connect');
 
 module.exports = {
   DB_URL,

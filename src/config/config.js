@@ -1,4 +1,4 @@
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
 dotenv.config();
 
 const {
@@ -9,6 +9,8 @@ const {
   PORT,
   JWT_ACCESS_SECRET,
   JWT_REFRESH_SECRET,
+  ACCESS_EXPIRES_IN,
+  REFRESH_EXPIRES_IN,
 } = process.env;
 
 module.exports = {
@@ -19,4 +21,6 @@ module.exports = {
   PORT,
   JWT_ACCESS_SECRET,
   JWT_REFRESH_SECRET,
+  ACCESS_EXPIRES_IN,
+  REFRESH_EXPIRES_IN,
 };

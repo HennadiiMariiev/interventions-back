@@ -1,5 +1,5 @@
-const joi = require("joi");
-const PasswordComplexity = require("joi-password-complexity");
+const joi = require('joi');
+const PasswordComplexity = require('joi-password-complexity');
 
 const joiUserRegistrationSchema = joi.object({
   email: joi.string().email({ minDomainSegments: 2 }).required(),
@@ -18,7 +18,7 @@ const joiUserRegistrationSchema = joi.object({
 const joiInterventionSchema = joi.object({
   code: joi
     .string()
-    .regex(/(\d{5}[-]\d{2})\b/, "'97123-12'")
+    .regex(/(\d{5})\b/, "'97123654'")
     .required(),
 
   date: joi.date().required(),
