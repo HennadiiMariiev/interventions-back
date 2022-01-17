@@ -59,6 +59,10 @@ const authenticateUser = async (req, _, next) => {
       return next(new BadRequest("Bad Request: no Bearer"));
     }
 
+    if (!token || token === "null") {
+      return next(new BadRequest("Bad Request: no token"));
+    }
+
     const { payload: payloadEmail } = jwt.verify(token, JWT_ACCESS_SECRET);
 
     const user = await User.findOne({ email: payloadEmail });

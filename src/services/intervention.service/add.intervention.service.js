@@ -1,4 +1,5 @@
 const { Intervention } = require("../../model");
+const { USER_1_ID } = require("../../config");
 
 const add = async (body) => {
   try {
@@ -12,7 +13,7 @@ const add = async (body) => {
     const intervention = await new Intervention({
       code,
       date,
-      owner: _id,
+      owner: USER_1_ID,
     }).populate("owner", "email");
 
     if (amount) {

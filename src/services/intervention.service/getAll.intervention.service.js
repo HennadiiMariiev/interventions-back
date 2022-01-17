@@ -7,12 +7,15 @@ const {
   getLastDayOfMonth,
 } = require("../../helpers");
 const { MONTHES_ENUM } = require("../../config");
+const { USER_1_ID } = require("../../config");
 
 const getAll = async ({ user: { _id } }, query) => {
   try {
     const currentYear = new Date().getFullYear();
     const summary = initializeSummary(MONTHES_ENUM);
-    const interventionsByOwner = await Intervention.find({ owner: _id });
+    const interventionsByOwner = await Intervention.find({
+      owner: USER_1_ID,
+    });
 
     let total = 0;
 

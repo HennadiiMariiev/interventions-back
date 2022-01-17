@@ -1,9 +1,10 @@
 const { Intervention } = require("../../model");
+const { USER_1_ID } = require("../../config");
 
 const remove = async ({ interventionId }, { user: { _id } }) => {
   try {
     return await Intervention.findOneAndDelete({
-      owner: _id,
+      owner: USER_1_ID,
       _id: interventionId,
     }).populate("owner", "email");
   } catch (error) {

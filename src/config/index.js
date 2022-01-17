@@ -8,9 +8,13 @@ const {
   FRONTEND_APP_URL,
   ACCESS_EXPIRES_IN,
   REFRESH_EXPIRES_IN,
-} = require('./config');
-const { SALT_COUNT, MONTHES_ENUM } = require('./constants');
-const { connectDatabase } = require('./db.connect');
+  USER_1_ID,
+  USER_2_ID,
+  TEST_USER_1_ID,
+  TEST_USER_2_ID,
+} = require("./config");
+const { SALT_COUNT, MONTHES_ENUM } = require("./constants");
+const { connectDatabase } = require("./db.connect");
 
 module.exports = {
   DB_URL,
@@ -25,4 +29,8 @@ module.exports = {
   FRONTEND_APP_URL,
   connectDatabase,
   MONTHES_ENUM,
+  USER_1_ID,
+  USER_2_ID,
+  TEST_USER_1_ID,
+  TEST_USER_2_ID,
 };
