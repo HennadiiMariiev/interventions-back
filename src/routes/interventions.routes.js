@@ -22,6 +22,11 @@ interventionRouter.get(
   asyncWrapper(authenticateUser, interventionController.getAll)
 );
 
+interventionRouter.get(
+  "/last_five",
+  asyncWrapper(authenticateUser, interventionController.getLastFive)
+);
+
 interventionRouter.delete(
   "/:interventionId",
   asyncWrapper(authenticateUser, interventionController.remove)
