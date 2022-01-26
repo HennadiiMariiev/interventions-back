@@ -12,6 +12,8 @@ const { USER_1_ID } = require("../../config");
 const getAll = async ({ user: { _id } }, query) => {
   try {
     const currentYear = new Date().getFullYear();
+    const isCurrentMonth = query?.is_current_month === "true";
+    const currentMonth = new Date().getMonth();
     const summary = initializeSummary(MONTHES_ENUM);
     const interventionsByOwner = await Intervention.find({
       owner: USER_1_ID,
@@ -47,7 +49,11 @@ const getAll = async ({ user: { _id } }, query) => {
       },
       [...summary]
     );
-    return { result, total };
+
+    return {
+      result: isCurrentMonth ? [result[currentMonth]] : result,
+      total,
+    };
   } catch (error) {
     return error;
   }
