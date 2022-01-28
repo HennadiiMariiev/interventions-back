@@ -17,6 +17,11 @@ interventionRouter.post(
   )
 );
 
+interventionRouter.post(
+  "/add_list",
+  asyncWrapper(authenticateUser, interventionController.addList)
+);
+
 interventionRouter.get(
   "/",
   asyncWrapper(authenticateUser, interventionController.getAll)
